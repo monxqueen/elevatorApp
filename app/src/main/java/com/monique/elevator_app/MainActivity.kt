@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var entrarBtn: Button
     private lateinit var sairBtn: Button
     private val elevator = Elevator(0, 0, 5, 7)
-    private val qtdAndares = elevator.getQuantFloors()
     private val limitePessoas = elevator.getLimitPeople()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,40 +34,35 @@ class MainActivity : AppCompatActivity() {
 
         submitBtn.setOnClickListener{
             val andarInput = andarEdt.editText?.text.toString().toInt()
-            println(andarInput)
+            val sobeOuDesce: Boolean = elevator.subirOuDescer(andarInput, andarTxt)
 
-            if(andarInput > qtdAndares || andarInput < 0){
+            if(sobeOuDesce == false){
                 Toast.makeText(this,
                     "Andar inválido, tente novamente",
                     Toast.LENGTH_LONG).show()
-            }else if(andarInput == 0){
-                andarTxt.text = "térreo"
-                elevator.setFloor(0)
-            }else{
-                elevator.setFloor(andarInput)
-                andarTxt.text = "${elevator.getFloor()}º \nandar"
             }
         }
 
         entrarBtn.setOnClickListener{
-
-            if(elevator.getQuantPpl() == limitePessoas){
+            val podeEntrar: Boolean = elevator.entrar()
+            if(podeEntrar){
+                elevator.setPplQuantity(1)
+            }else{
                 Toast.makeText(this,
                     "Elevador com capacidade máxima, espere alguém sair",
                     Toast.LENGTH_LONG).show()
-            }else{
-                elevator.setPplQuantity(1)
             }
             qtdPessoasTxt.text = "${elevator.getQuantPpl()}/$limitePessoas"
         }
 
         sairBtn.setOnClickListener{
-            if(elevator.getQuantPpl() == 0){
+            val podeSair: Boolean = elevator.sair()
+            if(podeSair){
+                elevator.setPplQuantity(-1)
+            }else{
                 Toast.makeText(this,
                     "Ninguém no elevador para sair",
                     Toast.LENGTH_LONG).show()
-            }else{
-                elevator.setPplQuantity(-1)
             }
             qtdPessoasTxt.text = "${elevator.getQuantPpl()}/$limitePessoas"
         }

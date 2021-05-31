@@ -1,5 +1,7 @@
 package com.monique.elevator_app
 
+import android.widget.TextView
+
 class Elevator(private var pplQuantity: Int,
                private var currentFloor: Int,
                private val limitPeople: Int,
@@ -8,11 +10,36 @@ class Elevator(private var pplQuantity: Int,
     fun setPplQuantity(quant: Int){
         pplQuantity += quant
     }
-    fun setFloor(floor: Int){
-        currentFloor = floor
-    }
     fun getQuantPpl(): Int = pplQuantity
     fun getQuantFloors(): Int = limitFloors
-    fun getFloor(): Int = currentFloor
     fun getLimitPeople(): Int = limitPeople
+
+    fun entrar(): Boolean{
+        if(pplQuantity == limitPeople){
+            return false
+        }else{
+            return true
+        }
+    }
+    fun sair(): Boolean{
+        if(pplQuantity == 0) {
+            return false
+        }else{
+            return true
+        }
+    }
+
+    fun subirOuDescer(andarInput: Int, andarTxt: TextView): Boolean{
+        if(andarInput > 0 && andarInput <= limitFloors){
+            currentFloor = andarInput
+            andarTxt.text = "${currentFloor}º\nandar"
+            return true
+        }else if(andarInput == 0){
+            currentFloor == 0
+            andarTxt.text = "térreo"
+            return true
+        }else{
+            return false
+        }
+    }
 }
