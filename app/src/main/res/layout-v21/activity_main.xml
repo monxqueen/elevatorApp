@@ -3,7 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#D5D4D4"
+    android:background="#B7B8B8B8"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,18 +17,30 @@
         android:layout_height="wrap_content"
         android:text="Você está no"
         android:textSize="20dp"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
 
     <TextView
         android:layout_marginLeft="40dp"
         android:id="@+id/floor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="---"
+        android:text="9º andar"
         android:textSize="32dp"
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:layout_marginBottom="30dp" />
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
 
 
     <LinearLayout
@@ -66,9 +78,7 @@
         android:layout_height="wrap_content"
         android:hint="Digite um andar"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="20dp"
-        android:textColorHint="@color/white"
-        app:backgroundTint="@color/white">
+        android:layout_marginTop="20dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -76,20 +86,26 @@
             android:padding="15dp"
             android:layout_gravity="center"
             android:backgroundTint="#A5A5A5"
-            android:inputType="number"
+
             />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ir para o andar selecionado"
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
         android:layout_marginHorizontal="40dp"
-        android:backgroundTint="#6171DD" />
+        android:backgroundTint="#6171DD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341" />
 
 
     <TextView
@@ -100,7 +116,13 @@
         android:textSize="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.134" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -114,7 +136,7 @@
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:text="entrar"
-            android:backgroundTint="#3E9538"
+            android:backgroundTint="#33A32B"
             android:layout_marginRight="20dp"/>
 
         <Button
@@ -123,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sair"
-            android:backgroundTint="#C33131"
+            android:backgroundTint="#A32B2B"
             />
     </LinearLayout>
 
