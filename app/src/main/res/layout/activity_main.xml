@@ -7,19 +7,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <!--android:layout_margin="40dp"-->
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:text="Você está no"
         android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="40dp" />
 
 
     <TextView
@@ -28,14 +28,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginLeft="40dp"
-        android:text="5 andar"
+        android:text="5\nandar"
         android:textColor="@color/black"
         android:textSize="32dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <LinearLayout
+    <!--<LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,20 +68,59 @@
             android:textColor="@color/white"
             android:textSize="22dp"
             android:textStyle="bold" />
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/floorInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/floor"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <TextView
+        android:id="@+id/people"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/white"
+        android:textSize="50dp"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/floor" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pessoas no\n   elevador"
+        android:textColor="@color/white"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/people" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/floorInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:hint="Digite um andar"
         android:textColorHint="@color/white"
         app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -97,53 +136,51 @@
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginHorizontal="40dp"
         android:backgroundTint="#6171DD"
         android:text="ir para o andar selecionado"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floorInput" />
+        app:layout_constraintTop_toBottomOf="@+id/floor" />
 
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:text="Alguém irá..."
         android:textColor="@color/black"
         android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submit" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
         android:id="@+id/entry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#3E9538"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="40dp"
         android:text="entrar"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/floorInput" />
+        <!--android:layout_marginBottom="40dp"-->
 
     <Button
         android:id="@+id/getoff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#C33131"
-        android:layout_marginBottom="40dp"
         android:text="sair"
         android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-    <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+        app:layout_constraintTop_toBottomOf="@+id/floorInput" />
+    <!-- android:layout_marginBottom="40dp"-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
